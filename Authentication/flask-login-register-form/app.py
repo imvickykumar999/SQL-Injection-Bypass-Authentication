@@ -1,4 +1,6 @@
 
+# https://www.geeksforgeeks.org/add-user-and-display-current-username-in-flask/
+
 # Import all important libraries
 from flask import *
 from flask_mysqldb import MySQL
@@ -12,7 +14,7 @@ app.secret_key = 'GeeksForGeeks'
 # Set MySQL data
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = ''
+app.config['MYSQL_PASSWORD'] = 'YES'
 app.config['MYSQL_DB'] = 'user-table'
 
 mysql = MySQL(app)
@@ -22,12 +24,10 @@ mysql = MySQL(app)
 @app.route('/login', methods=['GET', 'POST'])
 def login():
 	message = ''
-	if request.method == 'POST' and 'email' in
-	request.form and 'password' in request.form:
+	if request.method == 'POST' and 'email' in request.form and 'password' in request.form:
 		email = request.form['email']
 		password = request.form['password']
-		cursor = mysql.connection.cursor
-				(MySQLdb.cursors.DictCursor)
+		cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
 		cursor.execute(
 			'SELECT * FROM user WHERE email = % s AND password = % s',
 				(email, password, ))
@@ -58,8 +58,7 @@ def logout():
 @app.route('/register', methods=['GET', 'POST'])
 def register():
 	message = ''
-	if request.method == 'POST' and 'name' in request.form
-			and 'password' in request.form and 'email' in request.form:
+	if request.method == 'POST' and 'name' in request.form and 'password' in request.form and 'email' in request.form:
 		userName = request.form['name']
 		password = request.form['password']
 		email = request.form['email']
