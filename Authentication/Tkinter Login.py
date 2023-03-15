@@ -2,6 +2,20 @@
 # https://www.geeksforgeeks.org/create-mysql-database-login-page-in-python-using-tkinter/
 # https://www.w3schools.com/python/python_mysql_getstarted.asp
 
+'''
+Should I use SQLite or MySQL?
+
+MySQL has a well-constructed user management system which can handle 
+multiple users and grant various levels of permission. 
+SQLite is suitable for smaller databases. 
+As the database grows the memory requirement also gets larger while 
+using SQLite. Performance optimization is harder when using SQLite.
+
+SQLite is probably the most straightforward database to 
+connect to with a Python application since you don't need 
+to install any external Python SQL modules to do so.
+'''	
+
 import tkinter as tk
 import mysql.connector
 from tkinter import *
