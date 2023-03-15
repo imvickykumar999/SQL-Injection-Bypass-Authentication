@@ -1,4 +1,7 @@
 
+# https://www.geeksforgeeks.org/create-mysql-database-login-page-in-python-using-tkinter/
+# https://www.w3schools.com/python/python_mysql_getstarted.asp
+
 import tkinter as tk
 import mysql.connector
 from tkinter import *
