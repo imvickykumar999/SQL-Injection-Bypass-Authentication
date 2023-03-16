@@ -1,5 +1,11 @@
 # SQL-Injection-Bypass-Authentication
 
+## *SQL Injection Input :* `' OR 1=1 --`
+
+> [![image](https://user-images.githubusercontent.com/50515418/225596324-b14dc967-2620-4143-8023-d39922b8663d.png)](https://colab.research.google.com/drive/1QBMU9-v5jowlzg3fncjlrUKirWTHtKjq?usp=sharing)
+
+---------------------------
+
 ## [`Flask User Authentication`](https://blog.appseed.us/flask-user-authentication-free-sample/)
 
 > ![image](https://user-images.githubusercontent.com/50515418/225039000-4f23199e-67f8-4be3-ad2b-18cc604164ac.png)
