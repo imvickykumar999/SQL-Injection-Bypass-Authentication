@@ -69,8 +69,7 @@ for row in cursor:
 
 conn.close()
 
-# ---------------------------------
-OUTPUT:
+# -------------------- OUTPUT:
 
 '''
 Enter NAME : ' OR 1=1 --
