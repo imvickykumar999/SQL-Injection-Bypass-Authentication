@@ -1,4 +1,6 @@
 
+# https://colab.research.google.com/drive/1QBMU9-v5jowlzg3fncjlrUKirWTHtKjq#scrollTo=es8m5ragAPDT
+
 import sqlite3
 
 conn = sqlite3.connect('test.db')
@@ -70,6 +72,7 @@ conn.close()
 # ---------------------------------
 OUTPUT:
 
+'''
 Enter NAME : ' OR 1=1 --
 Enter ADDRESS : 123
 
@@ -80,3 +83,4 @@ WHERE NAME='' OR 1=1 --' AND ADDRESS='123'
 (2, 'Allen', 25, 'Texas', 15000.0)
 (3, 'Teddy', 23, 'Norway', 20000.0)
 (4, 'Mark', 25, 'Rich-Mond', 65000.0)
+'''
