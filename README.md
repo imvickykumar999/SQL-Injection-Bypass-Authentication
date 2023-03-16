@@ -1,6 +1,20 @@
 # SQL-Injection-Bypass-Authentication
 
+<br>
+
+https://github.com/imvickykumar999/SQL-Injection-Bypass-Authentication/blob/7151a07632087cd72b04843df8ea4e4c9090ce23/ByPass%20Auth/Tkinter%20SQLite3/Tkinter%20Login.py#L58
+
+<br>
+
 ## *`SQL` [`Injection`](https://github.com/imvickykumar999/SQL-Injection-Bypass-Authentication/blob/a43362cf43e40ec639c61119d1b48c515b5da962/ByPass%20Auth/SQL_Injection.py#L79) `Input :`* `' OR 1=1 --`
+
+## [`Tkinter Login.py`](https://github.com/imvickykumar999/SQL-Injection-Bypass-Authentication/blob/main/ByPass%20Auth/Tkinter%20SQLite3/Tkinter%20Login.py)
+
+> ![ss](https://user-images.githubusercontent.com/50515418/225684373-b6a3926a-7c43-4d40-873f-9f367ab2fd7c.png)
+
+-------------------------
+
+## [`SQLite3 Colab Gist`](https://gist.github.com/imvickykumar999/a59ad110a3c60f0d93d4284c67fa5404)
 
 > [![image](https://user-images.githubusercontent.com/50515418/225596324-b14dc967-2620-4143-8023-d39922b8663d.png)](https://colab.research.google.com/drive/1QBMU9-v5jowlzg3fncjlrUKirWTHtKjq#scrollTo=hOIi_WLXsa3C&line=13&uniqifier=1)
 
