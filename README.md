@@ -2,7 +2,7 @@
 
 ## *`SQL` [`Injection`](https://github.com/imvickykumar999/SQL-Injection-Bypass-Authentication/blob/a43362cf43e40ec639c61119d1b48c515b5da962/ByPass%20Auth/SQL_Injection.py#L79) `Input :`* `' OR 1=1 --`
 
-> [![image](https://user-images.githubusercontent.com/50515418/225596324-b14dc967-2620-4143-8023-d39922b8663d.png)](https://colab.research.google.com/drive/1QBMU9-v5jowlzg3fncjlrUKirWTHtKjq?usp=sharing)
+> [![image](https://user-images.githubusercontent.com/50515418/225596324-b14dc967-2620-4143-8023-d39922b8663d.png)](https://colab.research.google.com/drive/1QBMU9-v5jowlzg3fncjlrUKirWTHtKjq#scrollTo=hOIi_WLXsa3C&line=13&uniqifier=1)
 
 ---------------------------
 
