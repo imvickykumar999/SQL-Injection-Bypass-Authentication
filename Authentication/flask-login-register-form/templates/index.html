@@ -3,9 +3,66 @@
 {% block content %}
 
 {% if session['logged_in'] %}
-
 	{% if data %}
-		<h3>{{data}}</h3>
+
+		<a target='__blank' href="https://www.instagram.com/{{username.lower()}}/">
+			<h3>Followers = {{data}}</h3>
+		</a>
+
+	<table border="10">
+		<thead>
+			<tr>
+			<th>Key</th>
+			<th>Value</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			{% for i in edge_felix_video_timeline %}
+				{% for key, value in i.items() %}
+					<tr>
+						<td> {{ key }} </td>
+						{% for x, y in value.items() %}
+							<tr>
+								<td> {{ x }} </td>
+								<td> {{ y }} </td>
+							</tr>
+						{% endfor %}
+
+					</tr>
+				{% endfor %}
+			{% endfor %}
+		</tbody>
+	</table>
+
+	<br> <br>
+
+	<table border="10">
+		<thead>
+			<tr>
+			<th>Key</th>
+			<th>Value</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			{% for i in edge_owner_to_timeline_media %}
+				{% for key, value in i.items() %}
+					<tr>
+						<td> {{ key }} </td>
+						{% for x, y in value.items() %}
+							<tr>
+								<td> {{ x }} </td>
+								<td> {{ y }} </td>
+							</tr>
+						{% endfor %}
+
+					</tr>
+				{% endfor %}
+			{% endfor %}
+		</tbody>
+	</table>
+
 	{% else %}
 
 		<form action="/" method="POST">

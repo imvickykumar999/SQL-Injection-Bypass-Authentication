@@ -29,7 +29,13 @@ def home():
     else:
         if request.method == 'POST':
             username = getname(request.form['username'])
-            return render_template('index.html', data=getfollowedby(username))
+            data = getfollowedby(username)
+
+            return render_template('index.html', 
+                username=username, data=data[0], 
+                edge_felix_video_timeline=data[1], 
+                edge_owner_to_timeline_media=data[2]
+                )
         return render_template('index.html')
 
 
