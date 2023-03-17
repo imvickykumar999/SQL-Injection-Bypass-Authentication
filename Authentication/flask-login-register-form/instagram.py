@@ -8,9 +8,10 @@ def getfollowedby(url):
 
     a = user.json()
     b = a['graphql']['user']['edge_followed_by']['count']
+    
     c = a['graphql']['user']['edge_felix_video_timeline']['edges']
     d = a['graphql']['user']['edge_owner_to_timeline_media']['edges']
-    return b, c, d
+    return b, c+d
 
 def getname(url):
     """Split the URL from the username"""

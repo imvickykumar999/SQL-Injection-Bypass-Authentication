@@ -9,59 +9,65 @@
 			<h3>Followers = {{data}}</h3>
 		</a>
 
-	<table border="10">
-		<thead>
-			<tr>
-			<th>Key</th>
-			<th>Value</th>
-			</tr>
-		</thead>
-		
-		<tbody>
-			{% for i in edge_felix_video_timeline %}
-				{% for key, value in i.items() %}
-					<tr>
-						<td> {{ key }} </td>
-						{% for x, y in value.items() %}
-							<tr>
-								<td> {{ x }} </td>
-								<td> {{ y }} </td>
-							</tr>
-						{% endfor %}
+		<input type="text" id="myInput" 
+			onkeyup="myFunction()" 
+			value="video_url"
+			placeholder="Search for names.." 
+			title="Type in a name">
 
-					</tr>
+		<br>
+			To Download Images or Videos, Try to Search : video_url, thumbnail_src
+		<br> <br>
+
+		<table id="myTable" border="10">
+			<thead>
+				<tr>
+				<th>Key</th>
+				<th>Value</th>
+				</tr>
+			</thead>
+			
+			<tbody>
+				{% for i in edge_felix_video_timeline %}
+					{% for key, value in i.items() %}
+						<tr>
+							<td> {{ key }} </td>
+							{% for x, y in value.items() %}
+								<tr>
+									<td> {{ x }} </td>
+									<td> {{ y }} </td>
+								</tr>
+							{% endfor %}
+
+						</tr>
+					{% endfor %}
 				{% endfor %}
-			{% endfor %}
-		</tbody>
-	</table>
+			</tbody>
+		</table>
 
-	<br> <br>
+		<script>
+			function myFunction() {
+				var input, filter, table, tr, td, i, txtValue;
 
-	<table border="10">
-		<thead>
-			<tr>
-			<th>Key</th>
-			<th>Value</th>
-			</tr>
-		</thead>
-		
-		<tbody>
-			{% for i in edge_owner_to_timeline_media %}
-				{% for key, value in i.items() %}
-					<tr>
-						<td> {{ key }} </td>
-						{% for x, y in value.items() %}
-							<tr>
-								<td> {{ x }} </td>
-								<td> {{ y }} </td>
-							</tr>
-						{% endfor %}
+				input = document.getElementById("myInput");
+				filter = input.value.toUpperCase();
+				table = document.getElementById("myTable");
+				tr = table.getElementsByTagName("tr");
 
-					</tr>
-				{% endfor %}
-			{% endfor %}
-		</tbody>
-	</table>
+				for (i = 0; i < tr.length; i++) {
+					td = tr[i].getElementsByTagName("td")[0];
+					if (td) {
+						txtValue = td.textContent || td.innerText;
+						if (txtValue.toUpperCase().indexOf(filter) > -1) {
+								tr[i].style.display = "";
+							} 
+						else {
+							tr[i].style.display = "none";
+						}
+					}       
+				}
+			}
+		</script>
 
 	{% else %}
 
