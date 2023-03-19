@@ -1,39 +1,40 @@
 """Flask Login Example and instagram fallowing find"""
 
-from flask import Flask, url_for, render_template, request, redirect, session
-from flask_sqlalchemy import SQLAlchemy
-from instagram import getfollowedby, getname
+from flask import Flask, url_for, render_template, request, redirect, session, flash
+from insta import getfollowedby, getname
+import sqlite3
 
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
-db = SQLAlchemy(app)
+conn = sqlite3.connect('test.db', 
+            check_same_thread=False)
 
-
-class User(db.Model):
-    """ Create user table"""
-    id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(80), unique=True)
-    password = db.Column(db.String(80))
-
-    def __init__(self, username, password):
-        self.username = username
-        self.password = password
+conn.execute('''
+        CREATE TABLE IF NOT EXISTS ADMIN (
+        USERNAME CHAR(50) PRIMARY KEY,
+        PASSWORD CHAR(50) NOT NULL )
+''')
 
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
     """ Session control"""
+
     if not session.get('logged_in'):
         return render_template('index.html')
     else:
         if request.method == 'POST':
-            username = getname(request.form['username'])
-            data = getfollowedby(username)
+            name = getname(request.form['username'])
+
+            if name == '':
+                return render_template('index.html')
+            data = getfollowedby(name)
 
             return render_template('index.html', 
-                username=username, data=data[0], 
-                edge_felix_video_timeline=data[1], 
+                username=name, 
+                data=data[0], 
+                session=session,
+                full_data=data[1], 
                 )
         return render_template('index.html')
 
@@ -41,33 +42,52 @@ def home():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     """Login Form"""
+
     if request.method == 'GET':
         return render_template('login.html')
     else:
-        name = request.form['username']
-        passw = request.form['password']
-        try:
-            data = User.query.filter_by(username=name, password=passw).first()
-            print('\n=================> ', data)
+        username = request.form['username']
+        password = request.form['password']
 
-            if data is not None:
-                session['logged_in'] = True
-                return redirect(url_for('home'))
+        try:
+            statement = f'''
+                SELECT * FROM ADMIN WHERE USERNAME='{username}' AND PASSWORD='{password}'
+            '''
+            crsr = conn.execute(statement)
+
+            if crsr.fetchone() is None:
+                flash("Either Username or Password is wrong")
+                return render_template('login.html')
             else:
-                return "Don't Login"
+                session['logged_in'] = True
+            return redirect(url_for('home'))
+            
         except Exception as e:
-            return e
+            return flash(f"{e}") 
 
 
 @app.route('/register/', methods=['GET', 'POST'])
 def register():
     """Register Form"""
+
     if request.method == 'POST':
-        new_user = User(
-            username=request.form['username'],
-            password=request.form['password'])
-        db.session.add(new_user)
-        db.session.commit()
+        username=request.form['username']
+        password=request.form['password']
+
+        if username == '' or password == '':
+            flash("Fill the empty field")
+            return render_template('register.html')
+        
+        try:
+            statement = f'''
+                INSERT INTO ADMIN (USERNAME,PASSWORD) VALUES ('{username}', '{password}')
+            '''
+            conn.execute(statement)
+            conn.commit()
+        except:
+            flash("Username already exists.")  
+            return render_template('register.html')
+
         return render_template('login.html')
     return render_template('register.html')
 
@@ -75,12 +95,13 @@ def register():
 @app.route("/logout")
 def logout():
     """Logout Form"""
+
     session['logged_in'] = False
+    flash("You are successfuly Logged out") 
     return redirect(url_for('home'))
 
 
 if __name__ == '__main__':
     app.debug = True
-    db.create_all()
     app.secret_key = "123"
     app.run(debug=True)

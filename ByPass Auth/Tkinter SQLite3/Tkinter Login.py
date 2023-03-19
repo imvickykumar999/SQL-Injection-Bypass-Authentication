@@ -20,29 +20,28 @@ to install any external Python SQL modules to do so.
 from tkinter import *
 import  sqlite3
 
-# conn=sqlite3.connect("student.db")
-# print("\n", "Database created successfully")
+conn=sqlite3.connect("student.db")
+print("\n", "Database created successfully")
 
-# conn.execute("""
-# CREATE TABLE ADMIN(
-# ADMIN_ID INTEGER PRIMARY KEY AUTOINCREMENT  NOT NULL ,
-# USERNAME TEXT NOT NULL, 
-# PASSWORD TEXT NOT NULL)
-# """)
-# print ("Table ADMIN created successfully")
-
-
-# conn.execute("INSERT INTO ADMIN(USERNAME,PASSWORD) VALUES ('admin', 'admin789')");
-# conn.execute("INSERT INTO ADMIN(USERNAME,PASSWORD) VALUES ('krazy', 'krazy789')");
-
-# conn.commit()
-# print ("Records inserted successfully")
+conn.execute("""
+CREATE TABLE IF NOT EXISTS ADMIN (
+USERNAME TEXT PRIMARY KEY, 
+PASSWORD TEXT NOT NULL)
+""")
+print ("Table ADMIN created successfully")
 
 
-# cursor = conn.execute("SELECT * from ADMIN")
-# print("ID\tUSERNAME\tPASSWORD")
-# for row in cursor:
-#    print ("{}\t{}\t\t{}".format(row[0],row[1],row[2]))
+conn.execute("INSERT OR IGNORE INTO ADMIN(USERNAME,PASSWORD) VALUES ('admin', 'admin789')");
+conn.execute("INSERT OR IGNORE INTO ADMIN(USERNAME,PASSWORD) VALUES ('krazy', 'krazy789')");
+
+conn.commit()
+print ("Records inserted successfully")
+
+
+cursor = conn.execute("SELECT * from ADMIN")
+print("ID\tUSERNAME\tPASSWORD")
+for row in cursor:
+   print ("{}\t{}\t\t{}".format(row[0],row[1],row[2]))
 
 
 def login():

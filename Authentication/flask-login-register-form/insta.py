@@ -18,31 +18,3 @@ def getname(url):
     sp = url.split("instagram.com/")
     rep = sp[0].replace("/", "")
     return rep
-
-'''
-	<table border="10">
-		<thead>
-			<tr>
-			<th>Key</th>
-			<th>Value</th>
-			</tr>
-		</thead>
-		
-		<tbody>
-			{% for i in edge_felix_video_timeline %}
-				{% for key, value in i.items() %}
-					<tr>
-						<td> {{ key }} </td>
-						{% for x, y in value.items() %}
-							<tr>
-								<td> {{ x }} </td>
-								<td> {{ y }} </td>
-							</tr>
-						{% endfor %}
-
-					</tr>
-				{% endfor %}
-			{% endfor %}
-		</tbody>
-	</table>
-'''
