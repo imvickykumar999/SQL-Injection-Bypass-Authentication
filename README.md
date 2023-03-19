@@ -6,7 +6,13 @@ https://github.com/imvickykumar999/SQL-Injection-Bypass-Authentication/blob/7151
 
 <br>
 
+> [![image](https://user-images.githubusercontent.com/50515418/226171853-6f703de7-32dc-4235-b6ca-e83b89a6d51d.png)](https://github.com/imvickykumar999/SQL-Injection-Bypass-Authentication/blob/4fd3340614dc1e12026381803c38337ac628b6a4/ByPass%20Auth/flask-login-register-form/app.py#L54)
+
 ## *`SQL` [`Injection`](https://github.com/imvickykumar999/SQL-Injection-Bypass-Authentication/blob/a43362cf43e40ec639c61119d1b48c515b5da962/ByPass%20Auth/SQL_Injection.py#L79) `Input :`* `' OR 1=1 --`
+
+> [![image](https://user-images.githubusercontent.com/50515418/226171901-2ace16d9-f44b-4279-a63d-f574cae61081.png)](https://github.com/imvickykumar999/Ideationology-Lab/blob/5fbfe7e6e9214dc97ece8f7172205f6314daafbf/SQL/ByPass%20Auth/flask-login-register-form/app.py#L54)
+
+------------
 
 ## [`Tkinter Login.py`](https://github.com/imvickykumar999/SQL-Injection-Bypass-Authentication/blob/main/ByPass%20Auth/Tkinter%20SQLite3/Tkinter%20Login.py)
 
