@@ -32,8 +32,8 @@ def home():
 
             return render_template('index.html', 
                 username=name, 
-                data=data[0], 
                 session=session,
+                data=data[0], 
                 full_data=data[1], 
                 )
         return render_template('index.html')
@@ -60,6 +60,7 @@ def login():
                 return render_template('login.html')
             else:
                 session['logged_in'] = True
+                session['username'] = username
             return redirect(url_for('home'))
             
         except Exception as e:
@@ -84,6 +85,7 @@ def register():
             '''
             conn.execute(statement)
             conn.commit()
+            
         except:
             flash("Username already exists.")  
             return render_template('register.html')
