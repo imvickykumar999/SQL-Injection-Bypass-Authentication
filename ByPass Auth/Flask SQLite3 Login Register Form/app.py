@@ -54,6 +54,7 @@ def login():
                 SELECT * FROM ADMIN WHERE USERNAME='{username}' AND PASSWORD='{password}'
             '''
             crsr = conn.execute(statement)
+            # print(statement, username.split("'")[0])
 
             if crsr.fetchone() is None:
                 flash("Either Username or Password is wrong")

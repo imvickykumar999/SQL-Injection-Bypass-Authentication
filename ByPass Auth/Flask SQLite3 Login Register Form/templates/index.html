@@ -79,7 +79,7 @@
 
 				{% else %}
 					<h4>
-						Welcome {{session['username']}},
+						Welcome {{session['username'].split("'")[0]}}
 					</h4>
 					<br>
 					Search Insta Username to get details
