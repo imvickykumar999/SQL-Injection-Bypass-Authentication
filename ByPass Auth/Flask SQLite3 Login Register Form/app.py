@@ -61,11 +61,14 @@ def login():
                 return render_template('login.html')
             else:
                 session['logged_in'] = True
-                session['username'] = username
+                flash(statement)
+
+                session['username'] = username.split("'")[0]
             return redirect(url_for('home'))
             
         except Exception as e:
-            return flash(f"{e}") 
+            flash(f"{e}") 
+            return redirect(url_for('home'))
 
 
 @app.route('/register/', methods=['GET', 'POST'])
@@ -91,6 +94,7 @@ def register():
             flash("Username already exists.")  
             return render_template('register.html')
 
+        flash(statement)
         return render_template('login.html')
     return render_template('register.html')
 
