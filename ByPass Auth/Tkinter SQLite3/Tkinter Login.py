@@ -18,15 +18,15 @@ to install any external Python SQL modules to do so.
 '''	
 
 from tkinter import *
-import  sqlite3
+import sqlite3
 
 conn=sqlite3.connect("student.db")
 print("\n", "Database created successfully")
 
 conn.execute("""
 CREATE TABLE IF NOT EXISTS ADMIN (
-USERNAME TEXT PRIMARY KEY, 
-PASSWORD TEXT NOT NULL)
+USERNAME CHAR(50) PRIMARY KEY, 
+PASSWORD CHAR(50) NOT NULL)
 """)
 print ("Table ADMIN created successfully")
 
