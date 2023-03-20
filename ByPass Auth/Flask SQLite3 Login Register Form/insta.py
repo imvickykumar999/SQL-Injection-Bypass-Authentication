@@ -8,7 +8,7 @@ def getfollowedby(url):
     user = requests.get(link)
 
     a = user.json()
-    print(a)
+    # print(a)
     b = a['graphql']['user']['edge_followed_by']['count']
     
     c = a['graphql']['user']['edge_felix_video_timeline']['edges']

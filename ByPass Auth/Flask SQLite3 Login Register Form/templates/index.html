@@ -56,10 +56,13 @@
 							{% for i in full_data %}
 								{% for key, value in i.items() %}
 									<tr>
-										<td> {{ key }} </td>
 										{% for x, y in value.items() %}
 											<tr>
-												<td> {{ x }} </td>
+												<td> 
+													<a target="_blank" href="{{ y }}">
+														<font color="Blue"> {{ x }} </font>
+													</a>
+												 </td>
 												<td> {{ y }} </td>
 											</tr>
 										{% endfor %}
