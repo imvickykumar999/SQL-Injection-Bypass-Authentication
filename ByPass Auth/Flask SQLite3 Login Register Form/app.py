@@ -1,4 +1,6 @@
+
 """Flask Login Example and instagram fallowing find"""
+# https://techmonger.github.io/10/flask-simple-authentication/#python
 
 from flask import Flask, url_for, render_template, request, redirect, session, flash
 from insta import getfollowedby, getname
