@@ -4,7 +4,7 @@
 
 > [![image](https://user-images.githubusercontent.com/50515418/226313425-3c508c86-508c-4a3c-871c-83fbc68591bb.png)](https://youtu.be/nYVj4BmR0bM)
 >
->      YouTube Video : Login using SQL Injection 💉 via Selenium web Automation : https://youtu.be/nYVj4BmR0bM
+>      YouTube Video : Login using SQL Injection 💉 via Selenium web Automation
 
 <hr>
 
