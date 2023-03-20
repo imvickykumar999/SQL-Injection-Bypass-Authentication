@@ -4,6 +4,7 @@
 
 > https://github.com/imvickykumar999/SQL-Injection-Bypass-Authentication/blob/7151a07632087cd72b04843df8ea4e4c9090ce23/ByPass%20Auth/Tkinter%20SQLite3/Tkinter%20Login.py#L58
 >
+> ----------------
 >
 > [![image](https://user-images.githubusercontent.com/50515418/226171853-6f703de7-32dc-4235-b6ca-e83b89a6d51d.png)](https://github.com/imvickykumar999/SQL-Injection-Bypass-Authentication/blob/4fd3340614dc1e12026381803c38337ac628b6a4/ByPass%20Auth/flask-login-register-form/app.py#L54)
 
