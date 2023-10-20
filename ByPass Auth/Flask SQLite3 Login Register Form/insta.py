@@ -4,8 +4,11 @@ import requests
 
 def getfollowedby(url):
     """View Instagram user follower count"""
-    link = f'https://www.instagram.com/{url}/?__a=1&__d=1'
+    link = f'https://www.instagram.com/{url}/channel/?__a=1&__d=dis'
     user = requests.get(link)
+
+    with open(f'static/{url}.html', 'w') as f:
+        f.write(user.text)
 
     a = user.json()
     # print(a)
