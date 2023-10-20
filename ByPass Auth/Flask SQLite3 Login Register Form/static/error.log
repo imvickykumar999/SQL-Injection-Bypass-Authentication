@@ -1,0 +1,28 @@
+2023-10-20 12:22:31,884: Exception on /login [POST]
+Traceback (most recent call last):
+  File "/home/sqlinjection/mysite/app.py", line 62, in login
+    flash("Either Username or Password is wrong")
+  File "/usr/local/lib/python3.10/site-packages/flask/helpers.py", line 389, in flash
+    session["_flashes"] = flashes
+  File "/usr/local/lib/python3.10/site-packages/flask/sessions.py", line 97, in _fail
+    raise RuntimeError(
+RuntimeError: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+**NO MATCH**
+During handling of the above exception, another exception occurred:
+**NO MATCH**
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.10/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.10/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/sqlinjection/mysite/app.py", line 72, in login
+    flash(f"{e}")
+  File "/usr/local/lib/python3.10/site-packages/flask/helpers.py", line 389, in flash
+    session["_flashes"] = flashes
+  File "/usr/local/lib/python3.10/site-packages/flask/sessions.py", line 97, in _fail
+    raise RuntimeError(
+RuntimeError: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.

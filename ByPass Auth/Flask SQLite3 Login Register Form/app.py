@@ -112,5 +112,5 @@ def logout():
 
 if __name__ == '__main__':
     app.debug = True
-    app.secret_key = "123"
+    app.secret_key = "cghtyjhdhtjtyjhgrsehr"
     app.run(debug=True)
